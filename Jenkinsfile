@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Get some code from a GitHub repository
-                git 'branch: main, https://github.com/ssdevsecops/HelloDevops.git'
+                git branch: 'main', url: 'https://github.com/ssdevsecops/HelloDevops.git'
 
                 // Run Maven on a Unix agent.
                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
